@@ -3,7 +3,7 @@ import { Alert } from 'react-native';
 
 interface AuthContextProps {
   user: { id: string; email: string; name: string } | null;
-  login: (email: string, password: string) => Promise<boolean>; // 👈 ahora devuelve boolean
+  login: (email: string, password: string) => Promise<boolean>;
   logout: () => Promise<void>;
 }
 
@@ -27,7 +27,7 @@ export default function AuthProvider({ children }: { children: React.ReactNode }
       setUser({ id: foundUser.id, email: foundUser.email, name: foundUser.name });
       return true;
     } else {
-      return false; // 👈 devolvemos false en lugar de alertar aquí
+      return false;
     }
   };
 
